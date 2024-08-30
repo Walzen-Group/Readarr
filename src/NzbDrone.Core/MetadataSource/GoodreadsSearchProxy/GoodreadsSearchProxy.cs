@@ -24,7 +24,7 @@ namespace NzbDrone.Core.MetadataSource.Goodreads
             _cachedHttpClient = cachedHttpClient;
             _logger = logger;
 
-            _searchBuilder = new HttpRequestBuilder($"http://{Environment.GetEnvironmentVariable("API_URL") ?? "localhost:3000"}/bookinfo/v1/search")
+            _searchBuilder = new HttpRequestBuilder("http://localhost:3000/bookinfo/v1/search")
                 .KeepAlive()
                 .CreateFactory();
         }
