@@ -16,7 +16,7 @@ namespace NzbDrone.Common.Cloud
             Services = new HttpRequestBuilder("https://readarr.servarr.com/v1/")
                 .CreateFactory();
 
-            Metadata = new HttpRequestBuilder("http://localhost:3000/bookinfo/v1/{route}")
+            Metadata = new HttpRequestBuilder($"http://{Environment.GetEnvironmentVariable("API_URL") ?? "localhost:3000"}/bookinfo/v1/{route}")
                 .CreateFactory();
         }
 
